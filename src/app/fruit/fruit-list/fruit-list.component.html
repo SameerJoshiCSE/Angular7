@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-lg-12">
+        <app-fruit-edit (addedItem)="onItemAdded($event)"></app-fruit-edit>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-12">
+        <app-fruit-name *ngFor="let valueEl of fruits" [value]="valueEl"></app-fruit-name>
+    </div>
+</div>
+

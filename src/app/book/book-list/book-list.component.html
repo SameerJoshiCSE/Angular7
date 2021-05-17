@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-lg-12">
+        <app-book-edit></app-book-edit>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-12">
+        <app-book-name *ngFor="let valueEl of books" [value]="valueEl"
+        (bookSelected)="onBookSelected(valueEl)"
+        [book]="selectedBook"></app-book-name>
+    </div>
+</div>
+

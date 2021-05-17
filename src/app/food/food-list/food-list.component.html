@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-lg-12">
+        <app-food-add-edit></app-food-add-edit>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-12">
+        <app-food-name *ngFor="let value of foods" [value]="value"></app-food-name>
+    </div>
+</div>
+

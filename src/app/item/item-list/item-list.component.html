@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-12">
+        <app-item-add-edit (addedItem)="onItemAdded($event)"></app-item-add-edit>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-12">
+        <app-item-name *ngFor="let valueEl of items" [value]="valueEl"
+        (itemSelected)="onItemSelected(valueEl)"
+        [item]="selectedItem"></app-item-name>
+    </div>
+</div>
