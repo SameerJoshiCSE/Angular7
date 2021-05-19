@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ItemService } from '../../service/item.service';
 import { Item } from '../../shared/item.model';
 
 @Component({
@@ -9,9 +10,12 @@ import { Item } from '../../shared/item.model';
 export class ItemNameComponent implements OnInit {
 
   @Input() value:Item;
-  constructor() { }
+  constructor(private itemService:ItemService) { }
 
   ngOnInit(): void {
   }
 
+  onItemSelected(){
+    this.itemService.itemSelected.emit(this.value);
+  }
 }

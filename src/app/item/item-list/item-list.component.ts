@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../service/item.service';
 import { Item } from '../shared/item.model'
 @Component({
   selector: 'app-item-list',
@@ -7,12 +8,11 @@ import { Item } from '../shared/item.model'
 })
 export class ItemListComponent implements OnInit {
 
-  items:Item[]=[
-    new Item(1,"Sameer Joshi")
-  ];
-  constructor() { }
+  items:{id:number,name:string}[]=[];
+  constructor(private itemService:ItemService) { }
 
   ngOnInit(): void {
+    this.items=this.itemService.items;
   }
 
   onItemAdded(item:Item){

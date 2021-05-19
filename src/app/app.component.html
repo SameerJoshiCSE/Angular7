@@ -1,6 +1,9 @@
 <app-header (selectedValue)="onView($event)"></app-header>
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12" *ngIf="loadedValue=='item'">
         <app-item></app-item>
+    </div>
+    <div class="col-lg-12" *ngIf="loadedValue=='book'">
+        <app-book></app-book>
     </div>
 </div>

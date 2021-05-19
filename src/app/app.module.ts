@@ -27,13 +27,10 @@ import { Book } from './book/shared/book.module';
 import { ItemDetailsComponent } from './item/item-details/item-details.component';
 
 
-/*const appRoutes:Routes=[
-  {path:'book',component:BookComponent},
+const appRoutes:Routes=[
   {path:'item',component:ItemComponent},
-  {path:'item/:id',component:ItemDetailsComponent},
-  {path:'person',component:PersonComponent},
-  {path:'food',component:FoodComponent},
-];*/
+  {path:'book',component:BookComponent}
+];
 
 @NgModule({
   declarations: [
@@ -62,7 +59,7 @@ import { ItemDetailsComponent } from './item/item-details/item-details.component
   imports: [
     BrowserModule,
     FormsModule,
-    //RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

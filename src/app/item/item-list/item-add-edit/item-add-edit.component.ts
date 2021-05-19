@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
+import { ItemService } from '../../service/item.service';
 import { Item } from '../../shared/item.model';
 
 @Component({
@@ -8,18 +9,14 @@ import { Item } from '../../shared/item.model';
 })
 export class ItemAddEditComponent implements OnInit {
 
-  @ViewChild("name") nameInputRef: ElementRef;;
-  @ViewChild("description") descInputRef:ElementRef;
+  @ViewChild("id") nameInputRef: ElementRef;;
+  @ViewChild("name") descInputRef:ElementRef;
   @Output() addedItem = new EventEmitter<Item>();
-  constructor() { }
+  constructor(private itemService:ItemService) { }
 
   ngOnInit(): void {
   }
   onAdder(){
-    const itemName=this.nameInputRef.nativeElement.value;
-    const itemdesc=this.descInputRef.nativeElement.value; 
-    const newItem = new Item(itemName,itemdesc);
-    this.addedItem.emit(newItem);
+    this.itemService.addItem(this.nameInputRef.nativeElement.value,this.descInputRef.nativeElement.value);
   }
-
 }

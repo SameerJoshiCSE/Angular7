@@ -6,8 +6,6 @@
 <hr>
 <div class="row">
     <div class="col-lg-12">
-        <app-item-name *ngFor="let valueEl of items" [value]="valueEl"
-        (itemSelected)="onItemSelected(valueEl)"
-        [item]="selectedItem"></app-item-name>
+        <app-item-name *ngFor="let valueEl of items" [value]="valueEl"></app-item-name>
     </div>
 </div>

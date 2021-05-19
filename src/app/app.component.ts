@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  loadedValue = 'book';
+  loadedValue = 'person';
   onView(feature:string){
     this.loadedValue=feature;
   }
