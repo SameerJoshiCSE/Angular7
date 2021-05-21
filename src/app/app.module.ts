@@ -28,7 +28,9 @@ import { ItemDetailsComponent } from './item/item-details/item-details.component
 
 
 const appRoutes:Routes=[
-  {path:'item',component:ItemComponent},
+  {path:'item',component:ItemComponent,children:[
+    {path:':id/:name',component:ItemDetailsComponent},
+  ]},
   {path:'book',component:BookComponent}
 ];
 

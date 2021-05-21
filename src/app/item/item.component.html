@@ -3,11 +3,6 @@
         <app-item-list></app-item-list>
     </div>
     <div class="col-md-6">
-        <app-item-details
-        *ngIf="SelectedItem; else info"
-        [value]="SelectedItem"></app-item-details>
-        <ng-template #info>
-            <p>Please Select Book</p>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>
