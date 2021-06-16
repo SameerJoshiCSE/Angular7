@@ -16,11 +16,26 @@ export class PipeComponent implements OnInit {
 
   userName="";
   password="";
+  message="";
+  flag=1;
+  date=new Date();
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    
+  transform() {
+    if(this.userName.length==0 || this.password.length==0){
+      this.message= "Please Enter valid Username or Password"
+    }
+    else if(this.password.length<8){
+      this.message= "Password is less than 8 characters";
+    }
+    else if(this.appService.users.find(o=>o.uname===this.userName && o.pass===this.password)){
+      this.message= "You Successfully Logged In with user name: "+this.message;
+      this.flag=0;
+    }
+    else{
+      this.message= "User Does not Exist";
+    }
   }
   // catchError(val=> of('I caught error'))
   // example=this.value.pipe();
