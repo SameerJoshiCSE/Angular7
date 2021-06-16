@@ -14,13 +14,5 @@ export class ItemNameComponent implements OnInit {
   constructor(private itemService:ItemService,private route:Router,private aroute:ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
-
-  getIndex(s){
-    return this.itemService.items.indexOf(s);
-  }
-  onItemSelected(){
-    let index=this.getIndex(this.value)
-    this.route.navigate(["/item",this.itemService.items[index].id,this.itemService.items[index].name]);
-  }
+  }  
 }

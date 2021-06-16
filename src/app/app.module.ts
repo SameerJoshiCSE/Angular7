@@ -25,14 +25,9 @@ import { ItemNameComponent } from './item/item-list/item-name/item-name.componen
 import { ItemAddEditComponent } from './item/item-list/item-add-edit/item-add-edit.component';
 import { Book } from './book/shared/book.module';
 import { ItemDetailsComponent } from './item/item-details/item-details.component';
+import { appRoutingModult } from './app.routing.module';
 
 
-const appRoutes:Routes=[
-  {path:'item',component:ItemComponent,children:[
-    {path:':id/:name',component:ItemDetailsComponent},
-  ]},
-  {path:'book',component:BookComponent}
-];
 
 @NgModule({
   declarations: [
@@ -61,7 +56,7 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    appRoutingModult
   ],
   providers: [],
   bootstrap: [AppComponent]

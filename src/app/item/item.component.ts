@@ -10,16 +10,10 @@ import { Item } from './shared/item.model';
   providers:[ItemService]
 })
 export class ItemComponent implements OnInit {
-
-  SelectedItem:Item;
+  
   constructor(private itemService:ItemService,private route:Router,private croute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.itemService.itemSelected.subscribe(
-      (item:Item)=> {
-        this.SelectedItem=item;
-      }
-    );
   }
 
 }
