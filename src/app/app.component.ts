@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { appServices } from './services/app.shopping.recipe.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers:[appServices]
 })
 export class AppComponent {
-  loadedValue = 'person';
-  onView(feature:string){
-    this.loadedValue=feature;
-  }
+  title = 'fresh-app';
 }
