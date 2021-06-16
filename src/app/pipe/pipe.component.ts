@@ -31,7 +31,6 @@ export class PipeComponent implements OnInit {
     }
     else if(this.appService.users.find(o=>o.uname===this.userName && o.pass===this.password)){
       this.message= "You Successfully Logged In with user name: "+this.message;
-      this.flag=0;
     }
     else{
       this.message= "User Does not Exist";
